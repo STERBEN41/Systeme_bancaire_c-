@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build systeme bancaire",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-std=c++14",
+                "-Iinclude",
+                "${workspaceFolder}\\main.c++",
+                "${workspaceFolder}\\source\\banque.c++",
+                "${workspaceFolder}\\source\\client.c++",
+                "${workspaceFolder}\\source\\compteBancaire.c++",
+                "${workspaceFolder}\\source\\compteCourant.c++",
+                "${workspaceFolder}\\source\\compteEpargne.c++",
+                "${workspaceFolder}\\source\\exceptionBancaire.c++",
+                "${workspaceFolder}\\source\\gestionFichier.c++",
+                "${workspaceFolder}\\source\\historiqueTransaction.c++",
+                "${workspaceFolder}\\source\\menu.c++",
+                "${workspaceFolder}\\source\\transaction.c++",
+                "-o",
+                "${workspaceFolder}\\main.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compile tous les .c++ du projet avec g++ (inclut le dossier include/)"
+        }
+    ]
+}

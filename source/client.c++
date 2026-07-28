@@ -74,7 +74,7 @@ void Client::afficherComptes() const
     }
 }
 
-// Surcharge de afficherComptes() -- meme nom, version qui affiche un seul compte precis
+// Surcharge de afficherComptes() avec le même nom, version qui affiche un seul compte precis
 void Client::afficherComptes(const std::string &numero) const
 {
     CompteBancaire *compte = rechercherCompte(numero); // leve CompteInexistantException si absent
@@ -97,6 +97,5 @@ const std::vector<CompteBancaire *> &Client::getComptes() const { return comptes
 int Client::getNbrClients() { return nbrClients; }
 
 // Setter
-void Client::setNbrClients(int valeur) { nbrClients = valeur; }
 void Client::setNom(const std::string &nouveauNom) { nom = nouveauNom; }
 void Client::setPrenom(const std::string &nouveauPrenom) { prenom = nouveauPrenom; }

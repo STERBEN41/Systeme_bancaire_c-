@@ -44,14 +44,14 @@ void Banque::supprimerClient(const std::string &idClient)
 
 // Definition de modifierClient()
 void Banque::modifierClient(const std::string &idClient, const std::string &nouveauNom,
-                             const std::string &nouveauPrenom)
+                            const std::string &nouveauPrenom)
 {
     Client *client = rechercherClient(idClient); // leve ClientInexistantException si absent
     client->setNom(nouveauNom);
     client->setPrenom(nouveauPrenom);
 }
 
-// Definition de rechercherClient() -- version par identifiant
+// Definition de rechercherClient() par identifiant
 Client *Banque::rechercherClient(const std::string &idClient) const
 {
     for (Client *client : clients)
@@ -64,7 +64,7 @@ Client *Banque::rechercherClient(const std::string &idClient) const
     throw ClientInexistantException(idClient); // aucun client trouve apres avoir parcouru toute la liste
 }
 
-// Surcharge de rechercherClient() -- meme nom, version par position dans la liste
+// Surcharge de rechercherClient() avec le même nom, version par position dans la liste
 Client *Banque::rechercherClient(int index) const
 {
     if (index < 0 || index >= static_cast<int>(clients.size()))

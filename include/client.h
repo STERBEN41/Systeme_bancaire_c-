@@ -14,7 +14,7 @@ private:
     std::string prenom;
     std::vector<CompteBancaire *> comptes;
     std::string dateInscription;
-    static int nbrClients; // Compteur de clients pour generer des IDs uniques
+    static int nbrClients; // Compteur de clients
 public:
     Client(const std::string &idClient, const std::string &nom, const std::string &prenom, const std::string &dateInscription = "");
     ~Client(); // Destructeur pour liberer la memoire des comptes associes au client
@@ -28,7 +28,6 @@ public:
     static int getNbrClients();
 
     // Setter
-    static void setNbrClients(int valeur);
     void setNom(const std::string &nouveauNom);       // pour l'operation "Modifier"
     void setPrenom(const std::string &nouveauPrenom);  // pour l'operation "Modifier"
 
@@ -36,8 +35,8 @@ public:
     void ajouterCompte(CompteBancaire *compte);
     void supprimerCompte(const std::string &numero); // pour l'operation "Supprimer"
     CompteBancaire* rechercherCompte(const std::string &numero) const;
-    void afficherComptes() const;                              // affiche TOUS les comptes du client
-    void afficherComptes(const std::string &numero) const;      // surcharge : affiche UN SEUL compte
+    void afficherComptes() const;                              // affiche tous les comptes du client
+    void afficherComptes(const std::string &numero) const;      // surcharge : affiche un compte
     friend std::ostream &operator<<(std::ostream &os, const Client &client);
 };
 #endif
